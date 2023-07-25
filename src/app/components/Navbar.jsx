@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <div className='navbarContainer'>
         <div className="navbarTitle"></div>
-        <div className="navbarLogo"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /></div>
+        <Link href="/" className="navbarLogo"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /></Link>
     <Link href="/Cart" className="cartContainer">
     <span className="material-symbols-outlined cartIcon">
     shopping_cart

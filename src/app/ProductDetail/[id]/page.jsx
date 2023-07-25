@@ -12,8 +12,8 @@ const productDetail = ({params}) => {
         <div key={item.id} class="containerDetailCard">
         <img class="productDetailImage" src={item.image.src} alt="Pizza de pepperoni"/>
         <h2 class="productDetailTitle">{item.name}</h2>
-        <p class="productDetailPrice">$12.99</p>
-        <button class="orderButton">¡Ordenar ahora!</button></div>
+        <p class="productDetailPrice">${item.price}</p>
+        <button onClick={() => data.addToCart(item)} class="orderButton">¡Ordenar ahora!</button></div>
     )) : console.assert("Puede que algo en el mapeo haya fallado")}</div>
   )
 }

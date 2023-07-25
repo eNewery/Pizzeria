@@ -18,19 +18,18 @@ const MiContextoProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [data, setData] = useState()
     const [counter, setCounter] = useState(0)
-const [total, setTotal] = useState()
     useEffect(() => {
         setData(db);
     }, [])
+    
     useEffect(() => {
-        const getTotal = cart.reduce((acc, product) => acc + product.price * product.quantity, 0)
-setTotal(getTotal)
-    }, [cart])
+
+    }, [])
     
 
     const db = [
     {
-    name:"Muzarella",
+    name:"Muzzarella",
     price:1000, 
     quantity:1,
     image:muzarella,
@@ -115,22 +114,29 @@ setTotal(getTotal)
     }
     ]
     
-    function addToCart(product){
-const existingProductIndex = cart.findIndex(item => item.id === product.id);
-if (existingProductIndex !== -1) {
-  cart[existingProductIndex].quantity += 1;
-} else {
-  setCart([...cart, product ]);
-}
+    function addToCart(item){
+        const existingItem = cart.find((cartItem) => cartItem.id === item.id);
 
+        if (existingItem) {
+          const updatedCart = cart.map((cartItem) =>
+            cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+          );
+          setCart(updatedCart);
+        } else {
+          setCart([...cart, { ...item, quantity: 1 }]);
+        }
     }
+    const totalc = cart.reduce((accumulator, currentItem) => {
+        const { price, quantity } = currentItem;
+        return accumulator + price * quantity;
+      }, 0);
     function removeCart(id) {
    const filtered = cart.filter(item => item.id !== id);
    setCart(filtered)
  
     }
     return (
-      <MiContexto.Provider value={{data, setData, addToCart, cart, total, removeCart}}>
+      <MiContexto.Provider value={{data, setData, addToCart, cart, removeCart, totalc}}>
         {children}
       </MiContexto.Provider>
     );

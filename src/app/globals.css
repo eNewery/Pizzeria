@@ -43,7 +43,6 @@ background-color: #f1f0de;
   justify-content: space-between;
   align-items: center;
   padding: 1em;
-box-shadow: inset 0.2em -0.2em 1em 0 #e54423;
 }
 
 .navbarLogo{
@@ -101,8 +100,6 @@ align-items: start;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  box-shadow: inset 0.2em 0.2em 1em 0em #e54423;
   border-radius: 1em;
 padding: 1em;
 width: 300px;
@@ -112,6 +109,7 @@ gap: 0.3em;
 .productItemCard:hover{
   box-shadow: inset -0.2em -0.2em 1em 0em #e54423;
   transition:0.5s;
+  transform: translateY(-0.5em);
 }
 .productItemCard h1{
   color:#e64322;
@@ -146,7 +144,7 @@ cursor: pointer;
   max-width: 800px;
   margin: 20px auto;
   background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px #d3381f;
   padding: 20px;
 }
 
@@ -179,7 +177,8 @@ cursor: pointer;
 }
 
 .product-quantity {
-  font-size: 16px;
+  font-size: 12px;
+  color: #d3381f;
 }
 
 .cart-total {
@@ -200,13 +199,80 @@ cursor: pointer;
   font-size: 18px;
   cursor: pointer;
   border-radius: 5px;
+  text-align: center;
 }
 
 .checkout-button:hover {
   background-color: #d3381f;
 }
+.cartDeleteBtn{
+  text-align: end;
+  width: 100%;
+  color: #d3381f;
+  cursor: pointer;
+}
+.noItemsCart{
+  font-size: 32px;
+  color: #d3381f;
+  font-weight: 100;
+}
 /* Cart Page */
 
+/* Finish Purchase */
+
+.containerPurchase {
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+}
+.form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #e64322;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #e64322;
+}
+
+.form-input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #e64322;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background-color: #e64322;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #d3381f;
+}
+
+/* Finish Purchase */
 
 
 /* Product Detail */

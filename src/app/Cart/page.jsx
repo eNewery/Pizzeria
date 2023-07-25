@@ -15,15 +15,17 @@ const Cart = () => {
         <div class="product-details">
             <p class="product-name">{item.name}</p>
             <p class="product-price">{item.price}$</p>
-            <p class="product-quantity">{item.quantity}</p>
-            <button onClick={() => data.removeCart(item.id)}>borrar</button>
+            <p class="product-quantity">Quantity: {item.quantity}</p>
+            <span onClick={() => data.removeCart(item.id)} class="material-symbols-outlined cartDeleteBtn">
+delete
+</span>
         </div>
     </div>
     ))}
 
     
     
-{data.cart.length > 0 ? <div><div class="cart-total">Total: ${data.total}</div><button class="checkout-button">Finalizar Compra</button></div> : <div>No hay elementos en el carrito.</div> }
+{data.cart.length > 0 ? <div><div class="cart-total">Total: ${data.totalc}</div><Link href="/FinishPurchase" class="checkout-button">Finalizar Compra</Link></div> : <div className='noItemsCart'>No hay elementos en el carrito.</div> }
     
 </div>
   )
