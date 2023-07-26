@@ -25,7 +25,6 @@ const FinishPurchase = () => {
       })}
   return (
     <div class="containerPurchase">
-        <h2 class="form-title">Formulario de Compra</h2>
         <form id='form' onSubmit={enviarCorreo}>
             <label class="form-label" for="nombre">Nombre</label>
             <input class="form-input" type="text" id="nombre" name="nombre" required/>
